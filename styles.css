@@ -234,6 +234,14 @@ em { font-style: italic; }
   margin-top: 1.6rem;
   fill: #4a6fa5;
   filter: drop-shadow(0 6px 24px rgba(15, 10, 7, 0.45));
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: keyholeSpin 8s linear infinite;
+}
+@keyframes keyholeSpin {
+  from { transform: perspective(700px) rotateY(0deg); }
+  to   { transform: perspective(700px) rotateY(360deg); }
 }
 
 /* Bottom bar */
@@ -472,5 +480,6 @@ em { font-style: italic; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__keyhole { animation: none; }
   html { scroll-behavior: auto; }
 }
