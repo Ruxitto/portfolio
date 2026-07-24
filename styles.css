@@ -235,6 +235,7 @@ em { font-style: italic; }
   height: var(--cs);
   margin: 2.4rem auto 0;
   perspective: 900px;
+  filter: drop-shadow(0 14px 28px rgba(15, 10, 7, 0.5));
 }
 .cube {
   position: relative;
@@ -243,7 +244,6 @@ em { font-style: italic; }
   transform-style: preserve-3d;
   will-change: transform;
   animation: cubeSpin 14s linear infinite;
-  filter: drop-shadow(0 14px 28px rgba(15, 10, 7, 0.5));
 }
 @keyframes cubeSpin {
   from { transform: rotateX(-22deg) rotateY(0deg); }
