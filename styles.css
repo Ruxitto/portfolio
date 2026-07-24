@@ -148,19 +148,27 @@ em { font-style: italic; }
 }
 
 /* Cursor-following wavy "lens" that reveals the painting (art.jpg).
-   mask-image (the blob shape) is injected by script.js. */
-.hero__flood {
+   mask-image (the blob shape) is injected by script.js.
+   The wrapper carries an animated SVG displacement filter so the
+   revealed edge keeps rippling like liquid. */
+.hero__lens-wrap {
   position: absolute;
   inset: 0;
   z-index: 2;
+  filter: url(#liquid);
+}
+.hero__flood {
+  --lens: 560px;
+  position: absolute;
+  inset: 0;
   opacity: 0;
   transition: opacity 0.35s ease;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-size: var(--lens, 440px);
-  mask-size: var(--lens, 440px);
-  -webkit-mask-position: calc(var(--mx, -9999px) - (var(--lens, 440px) / 2)) calc(var(--my, -9999px) - (var(--lens, 440px) / 2));
-  mask-position: calc(var(--mx, -9999px) - (var(--lens, 440px) / 2)) calc(var(--my, -9999px) - (var(--lens, 440px) / 2));
+  -webkit-mask-size: var(--lens);
+  mask-size: var(--lens);
+  -webkit-mask-position: calc(var(--mx, -9999px) - (var(--lens) / 2)) calc(var(--my, -9999px) - (var(--lens) / 2));
+  mask-position: calc(var(--mx, -9999px) - (var(--lens) / 2)) calc(var(--my, -9999px) - (var(--lens) / 2));
 }
 .hero.is-hovering .hero__flood { opacity: 1; }
 .hero__flood img {
@@ -184,7 +192,7 @@ em { font-style: italic; }
     linear-gradient(0deg, rgba(15, 10, 7, 0.85) 0%, transparent 20%, transparent 80%, rgba(15, 10, 7, 0.6) 100%);
 }
 @media (max-width: 720px) {
-  .hero__flood { --lens: 300px; }
+  .hero__flood { --lens: 380px; }
 }
 
 /* Centered headline */
