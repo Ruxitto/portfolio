@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandro Rukhadze — Designer & Creative</title>
+  <meta name="description" content="Portfolio of Sandro Rukhadze — art direction, UI/UX design and creative development." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script>document.documentElement.classList.add("js");</script>
+  <!-- Spotlight / keyhole cursor layer -->
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo">SR<span>.</span></a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="#contact" class="nav__cta">Get in touch</a>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow reveal">Portfolio — 2026</p>
+          <h1 class="hero__title">
+            <span class="reveal">Sandro</span>
+            <span class="reveal hero__title--italic">Rukhadze</span>
+          </h1>
+          <p class="hero__lead reveal">
+            Designer &amp; creative developer. I unlock brand personality
+            through art direction, interface design and code.
+          </p>
+          <div class="hero__meta reveal">
+            <span>Based in Georgia</span>
+            <span>Available for work</span>
+          </div>
+        </div>
+        <div class="hero__photo reveal">
+          <img src="hero.jpg" alt="Sandro Rukhadze" loading="eager" />
+        </div>
+      </div>
+      <div class="hero__scroll reveal">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section class="work" id="work">
+      <div class="section-head">
+        <p class="section-head__index">01</p>
+        <h2 class="section-head__title reveal">Featured<br /><em>Projects</em></h2>
+        <p class="section-head__desc reveal">
+          A curated selection of work — each project given the space to speak
+          for itself, like a page in a magazine.
+        </p>
+      </div>
+
+      <div class="work__grid">
+        <a href="#" class="project project--lg reveal">
+          <div class="project__media" data-tone="teal">
+            <span class="project__num">01</span>
+          </div>
+          <div class="project__info">
+            <h3>Aether Studio</h3>
+            <p>Brand &amp; Website</p>
+          </div>
+        </a>
+
+        <a href="#" class="project reveal">
+          <div class="project__media" data-tone="olive">
+            <span class="project__num">02</span>
+          </div>
+          <div class="project__info">
+            <h3>Nova Type</h3>
+            <p>Art Direction</p>
+          </div>
+        </a>
+
+        <a href="#" class="project reveal">
+          <div class="project__media" data-tone="brown">
+            <span class="project__num">03</span>
+          </div>
+          <div class="project__info">
+            <h3>Palette Labs</h3>
+            <p>UI / UX Design</p>
+          </div>
+        </a>
+
+        <a href="#" class="project project--lg reveal">
+          <div class="project__media" data-tone="clay">
+            <span class="project__num">04</span>
+          </div>
+          <div class="project__info">
+            <h3>Meridian</h3>
+            <p>Product &amp; Development</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <div class="section-head">
+        <p class="section-head__index">02</p>
+        <h2 class="section-head__title reveal">What I<br /><em>do</em></h2>
+      </div>
+
+      <ul class="services__list">
+        <li class="service reveal">
+          <span class="service__no">01</span>
+          <h3>Art Direction</h3>
+          <p>Visual systems, mood and identity that give a brand its own voice.</p>
+        </li>
+        <li class="service reveal">
+          <span class="service__no">02</span>
+          <h3>UI / UX Design</h3>
+          <p>Interfaces that feel effortless — clear, considered, and human.</p>
+        </li>
+        <li class="service reveal">
+          <span class="service__no">03</span>
+          <h3>Creative Development</h3>
+          <p>Bringing designs to life in the browser with motion and detail.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- STANDOUT MESSAGE -->
+    <section class="standout" id="about">
+      <div class="standout__inner">
+        <p class="standout__small reveal">In a world full of noise —</p>
+        <h2 class="standout__big reveal">Be the one<br />to <em>stand out.</em></h2>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="section-head">
+        <p class="section-head__index">03</p>
+        <h2 class="section-head__title reveal">Let's<br /><em>talk</em></h2>
+      </div>
+      <div class="contact__body reveal">
+        <a href="mailto:hello@example.com" class="contact__email">hello@example.com</a>
+        <div class="contact__socials">
+          <a href="#">Dribbble</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Sandro Rukhadze</span>
+    <span>Designed &amp; built with care</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
