@@ -228,38 +228,6 @@ em { font-style: italic; }
   color: var(--cream);
   margin-top: -0.12em;
 }
-/* Small 3D rotating design cube — palette-coloured faces */
-.cube-scene {
-  --cs: clamp(50px, 6vw, 76px);
-  width: var(--cs);
-  height: var(--cs);
-  margin: 2.4rem auto 0;
-  perspective: 900px;
-  filter: drop-shadow(0 14px 28px rgba(15, 10, 7, 0.5));
-}
-.cube {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  will-change: transform;
-  animation: cubeSpin 14s linear infinite;
-}
-@keyframes cubeSpin {
-  from { transform: rotateX(-22deg) rotateY(0deg); }
-  to   { transform: rotateX(-22deg) rotateY(360deg); }
-}
-.cube__face {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(249, 244, 240, 0.3);
-}
-.cube__face--front  { background: var(--teal);  transform: translateZ(calc(var(--cs) / 2)); }
-.cube__face--back   { background: var(--brown); transform: rotateY(180deg) translateZ(calc(var(--cs) / 2)); }
-.cube__face--right  { background: var(--clay);  transform: rotateY(90deg)  translateZ(calc(var(--cs) / 2)); }
-.cube__face--left   { background: var(--olive); transform: rotateY(-90deg) translateZ(calc(var(--cs) / 2)); }
-.cube__face--top    { background: var(--beige); transform: rotateX(90deg)  translateZ(calc(var(--cs) / 2)); }
-.cube__face--bottom { background: var(--grey);  transform: rotateX(-90deg) translateZ(calc(var(--cs) / 2)); }
 
 /* Bottom bar */
 .hero__bar {
@@ -497,6 +465,5 @@ em { font-style: italic; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .cube { animation: none; }
   html { scroll-behavior: auto; }
 }
