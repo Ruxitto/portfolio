@@ -123,50 +123,52 @@
       </div>
     </section>
 
-    <!-- SERVICES / CATEGORY PANELS -->
+    <!-- WORK CATEGORIES -->
     <section class="cats" id="services">
-      <div class="cat" tabindex="0" style="--tone: var(--brown);">
-        <div class="cat__media"><img src="cat-art.jpg" alt="" loading="lazy" /></div>
+      <div class="cat" tabindex="0" role="button" aria-haspopup="dialog" data-cat="illustration" style="--tone: var(--brown);">
+        <div class="cat__media"><img src="works/57334.jpg" alt="" loading="lazy" /></div>
         <div class="cat__body">
-          <h3 class="cat__title">Art Direction</h3>
-          <ul class="cat__list">
-            <li>Visual identity</li>
-            <li>Creative direction</li>
-            <li>Style matching</li>
-            <li>Asset direction (photo, video, 3D)</li>
-            <li>Concept refinement</li>
-          </ul>
+          <h3 class="cat__title">Illustration</h3>
+          <p class="cat__desc">Character &amp; anime art — traditional and digital.</p>
+          <span class="cat__hint">View 14 works →</span>
         </div>
       </div>
 
-      <div class="cat" tabindex="0" style="--tone: var(--olive);">
-        <div class="cat__media"><img src="cat-ux.jpg" alt="" loading="lazy" /></div>
+      <div class="cat" tabindex="0" role="button" aria-haspopup="dialog" data-cat="photo" style="--tone: var(--olive);">
+        <div class="cat__media"><img src="works/60256.jpg" alt="" loading="lazy" /></div>
         <div class="cat__body">
-          <h3 class="cat__title">UI/UX Design</h3>
-          <ul class="cat__list">
-            <li>User research</li>
-            <li>Wireframing</li>
-            <li>Prototyping</li>
-            <li>Design systems</li>
-            <li>Interaction design</li>
-          </ul>
+          <h3 class="cat__title">Photo Manipulation</h3>
+          <p class="cat__desc">Surreal composites and dreamlike edits.</p>
+          <span class="cat__hint">View 6 works →</span>
         </div>
       </div>
 
-      <div class="cat" tabindex="0" style="--tone: var(--teal);">
-        <div class="cat__media"><img src="cat-web.jpg" alt="" loading="lazy" /></div>
+      <div class="cat" tabindex="0" role="button" aria-haspopup="dialog" data-cat="graphic" style="--tone: var(--teal);">
+        <div class="cat__media"><img src="works/25622.jpg" alt="" loading="lazy" /></div>
         <div class="cat__body">
-          <h3 class="cat__title">Web Development</h3>
-          <ul class="cat__list">
-            <li>Responsive build</li>
-            <li>Motion &amp; animation</li>
-            <li>CMS integration</li>
-            <li>Performance</li>
-            <li>Accessibility</li>
-          </ul>
+          <h3 class="cat__title">Graphic Design</h3>
+          <p class="cat__desc">Branding, packaging, posters &amp; covers.</p>
+          <span class="cat__hint">View 13 works →</span>
         </div>
       </div>
     </section>
+
+    <!-- WORKS MODAL — coverflow slider -->
+    <div class="modal" id="worksModal" aria-hidden="true">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal__close" data-close aria-label="Close">&times;</button>
+        <h3 class="modal__title" id="modalTitle"></h3>
+        <div class="flow">
+          <div class="flow__stage"></div>
+        </div>
+        <div class="flow__ui">
+          <button class="flow__arrow" data-dir="-1" aria-label="Previous">&#8249;</button>
+          <span class="flow__count"></span>
+          <button class="flow__arrow" data-dir="1" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+    </div>
 
     <!-- STANDOUT MESSAGE -->
     <section class="standout" id="about">

@@ -81,6 +81,116 @@ if (hero && flood) {
   });
 }
 
+// ---------- Works modal: coverflow slider ----------
+const WORKS = {
+  illustration: {
+    title: "Illustration",
+    files: ["57334","52045","94389","23467","83042","37875","21294","39594","60132","71817","14444","32793","84899","99269"],
+  },
+  photo: {
+    title: "Photo Manipulation",
+    files: ["60256","49100","45713","71541","75614","95770"],
+  },
+  graphic: {
+    title: "Graphic Design",
+    files: ["25622","22489","16710","88666","48219","37102","45973","53341","57136","60873","8833","93802","12297"],
+  },
+};
+
+const modal = document.getElementById("worksModal");
+if (modal) {
+  const stage = modal.querySelector(".flow__stage");
+  const titleEl = modal.querySelector(".modal__title");
+  const countEl = modal.querySelector(".flow__count");
+  const flow = modal.querySelector(".flow");
+  let slides = [], active = 0, lastFocus = null;
+
+  const layout = () => {
+    slides.forEach((s, i) => {
+      const off = i - active;
+      const abs = Math.min(Math.abs(off), 4);
+      const sign = Math.sign(off);
+      const tx = off * 40;
+      const tz = -abs * 155;
+      const ry = -sign * (off === 0 ? 0 : 44);
+      s.style.transform =
+        `translate(-50%, -50%) translateX(${tx}%) translateZ(${tz}px) rotateY(${ry}deg)`;
+      s.style.zIndex = String(120 - Math.abs(off));
+      s.style.opacity = Math.abs(off) > 4 ? "0" : "1";
+      s.style.pointerEvents = Math.abs(off) > 4 ? "none" : "auto";
+      s.classList.toggle("is-active", off === 0);
+    });
+    if (slides.length) countEl.textContent = `${active + 1} / ${slides.length}`;
+  };
+  const go = (dir) => {
+    active = Math.max(0, Math.min(slides.length - 1, active + dir));
+    layout();
+  };
+  const openModal = (cat) => {
+    const data = WORKS[cat];
+    if (!data) return;
+    lastFocus = document.activeElement;
+    active = 0;
+    titleEl.textContent = data.title;
+    stage.innerHTML = "";
+    slides = data.files.map((f, i) => {
+      const slide = document.createElement("div");
+      slide.className = "flow__slide";
+      const img = document.createElement("img");
+      img.src = `works/${f}.jpg`;
+      img.alt = `${data.title} — work ${i + 1}`;
+      img.loading = "lazy";
+      slide.appendChild(img);
+      slide.addEventListener("click", () => {
+        if (i !== active) { active = i; layout(); }
+      });
+      stage.appendChild(slide);
+      return slide;
+    });
+    layout();
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    modal.querySelector(".modal__close").focus();
+  };
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  };
+
+  document.querySelectorAll(".cat[data-cat]").forEach((cat) => {
+    const trigger = () => openModal(cat.getAttribute("data-cat"));
+    cat.addEventListener("click", trigger);
+    cat.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); trigger(); }
+    });
+  });
+  modal.querySelectorAll("[data-close]").forEach((el) =>
+    el.addEventListener("click", closeModal)
+  );
+  modal.querySelectorAll(".flow__arrow").forEach((b) =>
+    b.addEventListener("click", () => go(parseInt(b.dataset.dir, 10)))
+  );
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("is-open")) return;
+    if (e.key === "Escape") closeModal();
+    else if (e.key === "ArrowLeft") go(-1);
+    else if (e.key === "ArrowRight") go(1);
+  });
+
+  // drag / swipe
+  let sx = 0, dragging = false;
+  flow.addEventListener("pointerdown", (e) => { dragging = true; sx = e.clientX; });
+  window.addEventListener("pointerup", (e) => {
+    if (!dragging) return;
+    dragging = false;
+    const dx = e.clientX - sx;
+    if (Math.abs(dx) > 45) go(dx < 0 ? 1 : -1);
+  });
+}
+
 // ---------- Smooth anchor scroll (respects reduced motion) ----------
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
