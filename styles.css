@@ -193,6 +193,19 @@ em { font-style: italic; }
 }
 @media (max-width: 720px) {
   .hero__flood { --lens: 380px; }
+  /* Mobile: gently fade the whole hero to the art photo (JS adds .is-art after 2s) */
+  .hero.is-art .hero__flood {
+    -webkit-mask: none;
+    mask: none;
+    opacity: 1;
+    transition: opacity 1.4s ease;
+  }
+  .hero.is-art .hero__flood::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 10, 7, 0.5) 0%, rgba(15, 10, 7, 0.28) 45%, rgba(15, 10, 7, 0.55) 100%);
+  }
 }
 
 /* Centered headline */
