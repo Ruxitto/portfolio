@@ -12,3 +12,10 @@ desktop.ini
 
 # Source images kept locally, not deployed
 snap-src.jpg
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
