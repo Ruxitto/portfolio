@@ -676,7 +676,15 @@ em { font-style: italic; }
 
 /* ---------- Contact ---------- */
 .contact { background: var(--black); color: var(--cream); }
-.contact .section-head__title { color: var(--cream); }
+.contact .section-head__title {
+  color: var(--cream);
+  font-family: var(--sans);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+.contact .section-head__title em { font-style: normal; color: var(--beige); }
 .contact__body {
   max-width: var(--maxw);
   margin: 0 auto;
