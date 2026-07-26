@@ -684,10 +684,12 @@ em { font-style: italic; }
 }
 .contact__email {
   display: inline-block;
+  max-width: 100%;
   font-family: var(--serif);
-  font-size: clamp(2rem, 8vw, 6rem);
+  font-size: clamp(1.1rem, 5.8vw, 6rem);
   letter-spacing: -0.02em;
-  line-height: 1;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
   border-bottom: 2px solid transparent;
   transition: border-color 0.4s ease, color 0.4s ease;
 }
