@@ -601,8 +601,8 @@ em { font-style: italic; }
 .duo {
   position: relative;
   z-index: 2;
-  width: min(92vw, 860px);
-  aspect-ratio: 1500 / 1050;
+  width: min(88vw, 620px);
+  aspect-ratio: 747 / 856;
   animation: floatDuo 6.5s ease-in-out infinite;
 }
 .duo__photo {
@@ -639,7 +639,7 @@ em { font-style: italic; }
   50% { transform: translateY(-18px); }
 }
 @media (max-width: 720px) {
-  .duo { width: 96vw; }
+  .duo { width: min(82vw, 420px); }
 }
 
 /* ---------- Standout ---------- */

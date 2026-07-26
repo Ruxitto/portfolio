@@ -9,3 +9,6 @@ desktop.ini
 
 # Logs / temp
 *.log
+
+# Source images kept locally, not deployed
+snap-src.jpg
