@@ -44,7 +44,7 @@ if (hero && flood) {
 
   if (isMobile) {
     // Mobile: no hover — gently fade the whole hero to the art photo after 2s.
-    setTimeout(() => hero.classList.add("is-art"), 2000);
+    setTimeout(() => hero.classList.add("is-art"), 4000);
   } else {
     // Desktop: wavy cursor lens reveals the painting.
     const svg =
